@@ -9,9 +9,9 @@ public class Ball : MonoBehaviour
     private GameObject block;
     private Rigidbody2D rb;
     public LayerMask blockMask;
-    [Range(0, 200)]
+    [Range(0, 1000)]
     [SerializeField] public float thrust;
-    [SerializeField] public float currVelocity;
+    [SerializeField] public Vector3 currVelocity;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +23,31 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currVelocity = rb.velocity.x+rb.velocity.y;
+        currVelocity = rb.velocity;
      if(gameObject.transform.position.y < -5)
         {
             float x = transform.position.x;
             transform.position = new Vector3(x, 0, 0);
         }   
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        {
+            if (collision.gameObject.name == "hitboxL")
+            {
+                Debug.Log("testL");
+                rb.velocity = new Vector2(thrust / 200 * -1, thrust / 200);
+            }
+            if (collision.gameObject.name == "hitboxR")
+            {
+                Debug.Log("testR");
+                rb.velocity = new Vector2(thrust/200, thrust / 200);
+            }
+            if(collision.gameObject.name == "hitboxM")
+            {
+                Debug.Log("testM");
+                rb.velocity = new Vector2(0, thrust/100);
+            }
+        }
     }
 }

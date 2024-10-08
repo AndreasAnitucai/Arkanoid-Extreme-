@@ -3132,11 +3132,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1192229905667574126, guid: 1815b981de5e3bf40853dda5327cda79, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1192229905667574126, guid: 1815b981de5e3bf40853dda5327cda79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.17
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1192229905667574126, guid: 1815b981de5e3bf40853dda5327cda79, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7318,8 +7318,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43cc9dc929070354b894444ee8c14e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 200
-  curVelocity: 0
+  blockMask:
+    serializedVersion: 2
+    m_Bits: 0
+  thrust: 400
+  currVelocity: {x: 0, y: 0, z: 0}
 --- !u!4 &1839372648 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5295557077504228058, guid: 7ae61420575f2954a925a40915d9923c, type: 3}
@@ -7759,10 +7762,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851402c511e460346991bca991d5b2c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: {fileID: 9101044977084131040, guid: 7ae61420575f2954a925a40915d9923c, type: 3}
-  blockHolder: {fileID: 0}
-  blockAmountX: 0
-  blockAmountY: 0
 --- !u!224 &1935169487
 RectTransform:
   m_ObjectHideFlags: 0
