@@ -48,6 +48,7 @@ public class Ball : MonoBehaviour
                 Debug.Log("testM");
                 rb.velocity = new Vector2(0, thrust/100);
             }
+
         }
     }
 }

@@ -16,12 +16,12 @@ public class Gamemaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)/*GameObject.FindGameObjectsWithTag("Blocks").Length <= 0*/)
-        {
-            Debug.Log("Cake " + level);
-            level++;
-            Debug.Log("Cake " + level);
-            SceneManager.LoadScene("Level" + level);
-        }
+        //if (Input.GetMouseButtonDown(0)/*GameObject.FindGameObjectsWithTag("Blocks").Length <= 0*/)
+        //{
+        //    Debug.Log("Cake " + level);
+        //    level++;
+        //    Debug.Log("Cake " + level);
+        //    SceneManager.LoadScene("Level" + level);
+        //}
     }
 }
