@@ -7,7 +7,8 @@ public class blocks : MonoBehaviour
 
     [Range(0, 5)]
     [SerializeField] public int colour;
-
+    private int powerUpChance;
+    private int power;
     void Awake()
     {
         getColour();
@@ -22,6 +23,11 @@ public class blocks : MonoBehaviour
         }
         else
         {
+            powerUpChance = Random.Range(0, 100);
+            if(powerUpChance >= 10)
+            {
+                power = Random.Range(0, 6);
+            }
             Destroy(this.gameObject);
         }
     }

@@ -6,12 +6,10 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
 
-    private GameObject block;
+
     private Rigidbody2D rb;
-    public LayerMask blockMask;
-    [Range(0, 1000)]
-    [SerializeField] public float thrust;
-    [SerializeField] public Vector3 currVelocity;
+    public float thrust;
+    public Vector3 currVelocity;
     // Start is called before the first frame update
     void Start()
     {
