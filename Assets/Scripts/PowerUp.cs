@@ -4,25 +4,20 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-    [SerializeField] private GameObject powerUp;
-    [SerializeField] private int power;
-    // Start is called before the first frame update
-    void Start()
-    {
-        powerUp = this.gameObject;
-        power = Random.Range(0, 6);
-    }
+    public int powerUp;
     private void Awake()
     {
-        if (power == 0)
+        Physics.IgnoreLayerCollision(0, 2);
+        Physics.IgnoreLayerCollision(4, 5);
+        Animator Cake = this.gameObject.GetComponent<Animator>();
+        Cake.SetInteger("powerUp", powerUp);
+    }
+    public void Update()
+    {
+        if(this.gameObject.transform.position.y < -5)
         {
-
+            Destroy(gameObject);
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

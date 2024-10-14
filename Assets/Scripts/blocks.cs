@@ -9,6 +9,8 @@ public class blocks : MonoBehaviour
     [SerializeField] public int colour;
     private int powerUpChance;
     private int power;
+    public GameObject powerUp;
+
     void Awake()
     {
         getColour();
@@ -23,12 +25,20 @@ public class blocks : MonoBehaviour
         }
         else
         {
-            powerUpChance = Random.Range(0, 100);
-            if(powerUpChance >= 10)
+            powerUpChance = Random.Range(0, 10);
+
+            if (powerUpChance <= 10)
             {
                 power = Random.Range(0, 6);
+                powerUp.GetComponent<PowerUp>().powerUp = power;
+                Instantiate(powerUp, transform.position, transform.rotation);
+                Destroy(this.gameObject);
+
             }
-            Destroy(this.gameObject);
+            else
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
     //private void Update()

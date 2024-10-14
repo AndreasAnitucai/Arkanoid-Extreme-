@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private GameObject powerUp;
+    public int powerUpType;
+    public float powerUpTime;
     public float speed = 200;
     // Start is called before the first frame update
     void Update()
@@ -33,5 +36,38 @@ public class Player : MonoBehaviour
 
         //}
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "PowerUp")
+        {
+            powerUp = collision.gameObject;
+            powerUpType = powerUp.GetComponent<PowerUp>().powerUp;
+            switch (powerUpType)
+            {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                default:
+                    Debug.Log("cake");
+                    break;
 
+            }
+            Destroy(powerUp);
+        }
+    }
+    private IEnumerator lasers()
+    {
+        yield return new WaitForSeconds(2f);
+    }
 }

@@ -33,17 +33,14 @@ public class Ball : MonoBehaviour
         {
             if (collision.gameObject.name == "hitboxL")
             {
-                Debug.Log("testL");
                 rb.velocity = new Vector2(thrust / 200 * -1, thrust / 200);
             }
             if (collision.gameObject.name == "hitboxR")
             {
-                Debug.Log("testR");
                 rb.velocity = new Vector2(thrust/200, thrust / 200);
             }
             if(collision.gameObject.name == "hitboxM")
             {
-                Debug.Log("testM");
                 rb.velocity = new Vector2(0, thrust/100);
             }
 
