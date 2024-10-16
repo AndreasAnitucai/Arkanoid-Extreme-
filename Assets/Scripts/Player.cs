@@ -8,6 +8,10 @@ public class Player : MonoBehaviour
     public int powerUpType;
     public float powerUpTime;
     public float speed = 200;
+    public GameObject laser;
+    public GameObject laserL;
+    public GameObject laserR;
+
     // Start is called before the first frame update
     void Update()
     {
@@ -22,6 +26,35 @@ public class Player : MonoBehaviour
         if (mouseWorldPos.x <= -9)
         {
             this.gameObject.transform.position = new Vector3(-9, -4, 0);
+        }
+
+        switch (powerUpType)
+        {
+            case 0:
+
+                break;
+            case 1:
+
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+            case 4:
+
+                break;
+            case 5:
+
+                break;
+            case 6:
+
+                break;
+            default:
+                Debug.Log("cake");
+                break;
+
         }
 
         //if (this.gameObject.transform.position.x >= 9) {
@@ -42,32 +75,9 @@ public class Player : MonoBehaviour
         {
             powerUp = collision.gameObject;
             powerUpType = powerUp.GetComponent<PowerUp>().powerUp;
-            switch (powerUpType)
-            {
-                case 0:
-                    break;
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    break;
-                default:
-                    Debug.Log("cake");
-                    break;
 
-            }
             Destroy(powerUp);
         }
     }
-    private IEnumerator lasers()
-    {
-        yield return new WaitForSeconds(2f);
-    }
+
 }
