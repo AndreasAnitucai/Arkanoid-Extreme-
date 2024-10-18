@@ -43,6 +43,10 @@ public class Ball : MonoBehaviour
             {
                 rb.velocity = new Vector2(0, thrust/100);
             }
+            if(collision.gameObject.tag == "Blocks")
+            {
+                
+            }
 
         }
     }

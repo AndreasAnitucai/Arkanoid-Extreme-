@@ -25,7 +25,7 @@ public class blocks : MonoBehaviour
         }
         else
         {
-            powerUpChance = Random.Range(0, 10);
+            powerUpChance = Random.Range(0, 128);
 
             if (powerUpChance <= 10)
             {
